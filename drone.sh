@@ -3,7 +3,7 @@
 # to run
 # ssh root@_secret_ip_
 # curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/drone.sh
-# ./drone.sh 
+# ./drone.sh
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -11,7 +11,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
-# sudo systemctl status docker
 
 # docker-compose
 curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -32,5 +31,5 @@ sudo apt-get install python-certbot-nginx -y
 sed -i 's/server_name _/server_name groklemins.tk drone.groklemins.tk/' /etc/nginx/sites-available/default
 sudo nginx -t
 sudo systemctl reload nginx
-sudo certbot --nginx -d groklemins.tk -d drone.groklemins.tk --no-redirect --register-unsafely-without-email --agree-tos
+sudo certbot --nginx -d groklemins.tk --no-redirect --register-unsafely-without-email --agree-tos
 sudo certbot renew --dry-run
