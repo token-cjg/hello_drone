@@ -10,7 +10,8 @@ touch /etc/drone/server.env
 cat << EOF > /etc/drone/server.env
 # Service settings
 DRONE_RPC_SECRET=$DRONE_SECRET
-DRONE_SERVER_HOST=https://groklemins.tk
+DRONE_SERVER_HOST=groklemins.tk
+DRONE_SERVER_PROTO=https
 DRONE_RUNNER_CAPACITY=3
 DRONE_TLS_AUTOCERT=false
 
@@ -19,7 +20,6 @@ DRONE_OPEN=false
 DRONE_ADMIN=token-cjg
 
 # GitHub Settings
-DRONE_GITHUB=true
 DRONE_GITHUB_SERVER=https://github.com
 DRONE_GITHUB_CLIENT_ID=Client_ID_from_GitHub
 DRONE_GITHUB_CLIENT_SECRET=Client_Secret_from_GitHub
