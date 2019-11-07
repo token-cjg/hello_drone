@@ -18,8 +18,8 @@ DRONE_ADMIN=token-cjg
 
 # GitHub Settings
 DRONE_GITHUB=true
-DRONE_GITHUB_CLIENT=Client_ID_from_GitHub
-DRONE_GITHUB_SECRET=Client_Secret_from_GitHub
+DRONE_GITHUB_CLIENT_ID=Client_ID_from_GitHub
+DRONE_GITHUB_CLIENT_SECRET=Client_Secret_from_GitHub
 EOF
 touch /etc/drone/agent.env
 cat << EOF > /etc/drone/agent.env
