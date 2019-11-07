@@ -9,7 +9,7 @@ DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
 touch /etc/drone/server.env
 cat << EOF > /etc/drone/server.env
 # Service settings
-DRONE_SECRET=$(DRONE_SECRET)
+DRONE_SECRET=$DRONE_SECRET
 DRONE_HOST=https://groklemins.tk
 
 # Registration settings
@@ -23,7 +23,7 @@ DRONE_GITHUB_SECRET=Client_Secret_from_GitHub
 EOF
 touch /etc/drone/agent.env
 cat << EOF > /etc/drone/agent.env
-DRONE_SECRET=$(DRONE_SECRET)
+DRONE_SECRET=$DRONE_SECRET
 DRONE_SERVER=wss://groklemins.tk/ws/broker
 EOF
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service

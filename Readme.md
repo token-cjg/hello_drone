@@ -24,8 +24,7 @@
 Then
 
 * fill in environment variables from github application
-* sudo nginx -t
-* sudo systemctl restart nginx
-* sudo systemctl start drone
-* sudo systemctl status drone
-* sudo systemctl enable drone
+* curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/start.sh
+* wait for several minutes for docker to come up
+* visit https://groklemins.tk
+* profit!
