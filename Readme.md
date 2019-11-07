@@ -12,5 +12,20 @@
 ### Setting up nginx, docker, and certbot
 
 * ssh root@ip
-* curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/drone.sh
-* ./drone.sh
+* curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/prereqs.sh
+* ./prereqs.sh
+
+### Setting up drone
+
+* Set up an OAuth application per https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04
+* curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/setup.sh
+* ./setup.sh
+
+Then
+
+* fill in environment variables from github application
+* sudo nginx -t
+* sudo systemctl restart nginx
+* sudo systemctl start drone
+* sudo systemctl status drone
+* sudo systemctl enable drone

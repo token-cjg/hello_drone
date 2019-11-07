@@ -2,7 +2,7 @@
 
 # to run
 # ssh root@_secret_ip_
-# curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/drone.sh
+# curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/prereqs.sh
 # ./drone.sh
 
 # docker
@@ -20,6 +20,8 @@ docker-compose --version
 # nginx
 sudo apt-get install nginx
 sudo ufw allow 'Nginx Full'
+sudo ufw allow ssh
+sudo ufw enable
 sudo ufw status
 sudo systemctl status nginx
 
