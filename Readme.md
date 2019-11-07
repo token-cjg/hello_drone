@@ -1,3 +1,9 @@
+[![Build Status](https://groklemins.tk/api/badges/token-cjg/hello_drone/status.svg)](https://groklemins.tk/token-cjg/hello_drone)
+
+### Reference
+
+From the guide https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04
+
 ### Instructions
 
 * Use freenom to get a domain
