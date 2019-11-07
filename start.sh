@@ -10,5 +10,5 @@ sudo systemctl restart nginx
 
 # start drone!
 sudo systemctl start drone
-sudo systemctl status drone
+# sudo systemctl status drone
 sudo systemctl enable drone
