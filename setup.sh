@@ -9,10 +9,12 @@ DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
 touch /etc/drone/server.env
 cat << EOF > /etc/drone/server.env
 # Service settings
+DRONE_AGENTS_ENABLED=true
+
 DRONE_RPC_SECRET=$DRONE_SECRET
-DRONE_SERVER_HOST=groklemins.tk
+DRONE_SERVER_HOST=https://groklemins.tk
 DRONE_SERVER_PROTO=https
-DRONE_RUNNER_CAPACITY=3
+DRONE_RUNNER_CAPACITY=2
 DRONE_TLS_AUTOCERT=false
 
 # Registration settings
@@ -27,11 +29,15 @@ EOF
 touch /etc/drone/agent.env
 cat << EOF > /etc/drone/agent.env
 DRONE_RPC_SECRET=$DRONE_SECRET
-DRONE_RPC_SERVER=wss://groklemins.tk/ws/broker
-DRONE_RUNNER_CAPACITY=3
+DRONE_RPC_HOST=https://groklemins.tk
+DRONE_RPC_PROTO=https
+DRONE_RUNNER_CAPACITY=2
+DRONE_RUNNER_NAME=droneRunner
 EOF
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service
 sudo mv drone.service /etc/systemd/system/drone.service
 
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
 sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
+
+# DRONE_RPC_SERVER=wss://groklemins.tk/ws/broker
