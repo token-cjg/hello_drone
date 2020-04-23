@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # get drone!
-docker pull drone/drone:1.6.1
+docker pull drone/drone:1.7.0
 sudo mkdir /etc/drone
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/docker-compose.yml
 sudo mv docker-compose.yml /etc/drone/docker-compose.yml
