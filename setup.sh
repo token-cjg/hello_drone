@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # get drone!
-docker pull drone/drone:1.7.0
+sudo docker pull drone/drone:1.7.0
 sudo mkdir /etc/drone
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/docker-compose.yml
 sudo mv docker-compose.yml /etc/drone/docker-compose.yml
 DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
-touch /etc/drone/server.env
+sudo touch /etc/drone/server.env
 cat << EOF > /etc/drone/server.env
 # Service settings
 DRONE_RPC_SECRET=$DRONE_SECRET
