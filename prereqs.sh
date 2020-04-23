@@ -20,8 +20,8 @@ docker-compose --version
 # nginx
 sudo apt-get install -y nginx
 sudo ufw allow 'Nginx Full'
-sudo ufw allow ssh -y
-sudo ufw enable
+sudo ufw allow ssh
+sudo ufw --force enable
 sudo ufw status
 sudo systemctl status nginx
 
