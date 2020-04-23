@@ -1,7 +1,7 @@
 ### Instructions
 
 * Use freenom to get a domain
-* Use digitalocean to get a VM
+* Use digitalocean or azure to get a VM
 * Use cloudflare to do routing
 * Point freenom domain to cloudflare nameservers
 * On cloudflare point to VM ip
