@@ -15,6 +15,10 @@
 * Make sure port 80 is open on your machine, otherwise again certbot won't work
 * `sudo certbot certonly --standalone -d groklemins.tk`
 
+### Troubleshooting
+
+* `sudo apt-get purge nginx nginx-common`, then run `./prereqs.sh` again
+
 ### Setting up nginx, docker, and certbot
 
 * `ssh root@ip`
@@ -24,7 +28,7 @@
 ### Setting up drone
 
 * Set up an OAuth application per https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04
-* `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/setup.sh`sudo certbot certonly --standalone -d groklemins.tk
+* `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/setup.sh`
 * `./setup.sh`
 
 Then

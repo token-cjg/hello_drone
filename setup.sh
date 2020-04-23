@@ -33,5 +33,5 @@ EOF'
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service
 sudo mv drone.service /etc/systemd/system/drone.service
 
-curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
-sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
+# curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
+# sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
