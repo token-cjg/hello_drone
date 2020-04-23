@@ -6,7 +6,10 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - /var/lib/drone:/var/lib/drone
+      - ./drone-data:/var/lib/drone
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - drone
     restart: always
     env_file:
       - /etc/drone/server.env
@@ -16,8 +19,14 @@ services:
     command: agent
     depends_on:
       - drone-server
+    networks:
+      - drone
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
     env_file:
       - /etc/drone/agent.env
+
+networks:
+  drone:
+    name: drone_network
