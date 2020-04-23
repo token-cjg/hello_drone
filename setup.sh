@@ -27,7 +27,7 @@ EOF'
 sudo touch /etc/drone/agent.env
 sudo bash -c 'cat << EOF > /etc/drone/agent.env
 DRONE_RPC_SECRET=$DRONE_SECRET
-DRONE_RPC_SERVER=wss://groklemins.tk/ws/broker
+DRONE_RPC_SERVER=drone-server:8000
 DRONE_RUNNER_CAPACITY=3
 EOF'
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service
