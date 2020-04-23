@@ -14,7 +14,7 @@ sudo apt-get install -y docker-ce
 
 # docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 # nginx
@@ -28,7 +28,7 @@ sudo systemctl status nginx
 # nginx, HTTPS /w lets encrypt
 # note, need a domain - get one from freenom
 sudo add-apt-repository ppa:certbot/certbot -y
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install python-certbot-nginx -y
 sed -i 's/server_name _/server_name groklemins.tk drone.groklemins.tk/' /etc/nginx/sites-available/default
 sudo nginx -t
