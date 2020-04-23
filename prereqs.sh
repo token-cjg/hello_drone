@@ -12,13 +12,14 @@ sudo apt-get update
 apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 
+mkdir /usr/local/bin/docker-compose
 # docker-compose
 curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 # nginx
-sudo apt-get install nginx
+sudo apt-get install -y nginx
 sudo ufw allow 'Nginx Full'
 sudo ufw allow ssh
 sudo ufw enable
