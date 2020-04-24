@@ -29,12 +29,16 @@ sudo ufw --force enable
 sudo ufw status
 sudo systemctl status nginx
 
+# nginx, use our defined default file instead
+sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-available
+curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
+sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
+
 # nginx, HTTPS /w lets encrypt
 # note, need a domain - get one from freenom
 sudo add-apt-repository ppa:certbot/certbot -y
 sudo apt-get update -y
 sudo apt-get install python-certbot-nginx -y
-sed -i 's/server_name _/server_name groklemins.tk drone.groklemins.tk/' /etc/nginx/sites-available/default
 sudo nginx -t
 sudo systemctl reload nginx
 sudo certbot --nginx -d groklemins.tk --keep-until-expiring --no-redirect --register-unsafely-without-email --agree-tos

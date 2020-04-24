@@ -33,7 +33,3 @@ DRONE_RUNNER_CAPACITY=3
 EOF"
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service
 sudo mv drone.service /etc/systemd/system/drone.service
-
-sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-available
-curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
-sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
