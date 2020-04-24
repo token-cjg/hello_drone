@@ -5,6 +5,9 @@
 # curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/prereqs.sh
 # ./drone.sh
 
+# purge first!
+sudo apt-get purge nginx nginx-common
+
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
