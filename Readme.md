@@ -1,4 +1,4 @@
-### Instructions
+### Before you start...
 
 * Use freenom to get a domain
 * Use digitalocean or azure to get a VM
@@ -14,35 +14,12 @@
 1. `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/bootstrap.sh`
 1. `chmod +x bootstrap.sh`
 1. `./bootstrap.sh $DRONE_GITHUB_CLIENT_ID $DRONE_GITHUB_CLIENT_SECRET`
-
+1. wait for docker (several minutes)
+1. visit your.server.com # eg https://groklemins.tk
 
 ### Gotchas
 
 * Make sure that your domain is resolving first, otherwise certbot will complain!
 * Make sure port 80 is open on your machine, otherwise again certbot won't work
+* Make sure port 8000 is open on your machine, otherwise drone won't work.
 * `sudo certbot certonly --standalone -d groklemins.tk`
-
-### Troubleshooting
-
-* `sudo apt-get purge nginx nginx-common`, then run `./prereqs.sh` again
-
-### Setting up nginx, docker, and certbot
-
-* `ssh root@ip`
-* `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/prereqs.sh`
-* `./prereqs.sh`
-
-### Setting up drone
-
-* Set up an OAuth application per https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04
-* `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/setup.sh`
-* `./setup.sh`
-
-Then
-
-* fill in environment variables from github application (`sudo vim /etc/drone/server.env`)
-* `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/start.sh`
-* `./start.sh`
-* wait for several minutes for docker to come up
-* visit https://groklemins.tk
-* profit!
