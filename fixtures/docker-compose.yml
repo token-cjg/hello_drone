@@ -16,7 +16,7 @@ services:
     environment:
       - DRONE_GITHUB_SKIP_VERIFY=true
       - DRONE_AGENTS_ENABLED=true
-      - DRONE_HOST=http://localhost:8000
+      - DRONE_HOST=http://127.0.0.1:8000
       - DRONE_GITHUB=true
       - DRONE_SERVER_HOST=groklemins.tk
       - DRONE_SERVER_PROTO=https
@@ -26,7 +26,7 @@ services:
       - DRONE_ADMIN=token-cjg
 
   drone-agent:
-    image: drone/agent
+    image: drone/drone-runner-docker:1.3.0
     command: agent
     restart: always
     depends_on:
