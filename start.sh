@@ -9,6 +9,6 @@ sudo nginx -t
 sudo systemctl restart nginx
 sudo systemctl daemon-reload
 # start drone!
-sudo systemctl start drone
+sudo systemctl restart drone
 # sudo systemctl status drone
 sudo systemctl enable drone
