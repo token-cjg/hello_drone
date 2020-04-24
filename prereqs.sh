@@ -6,7 +6,7 @@
 # ./drone.sh
 
 # purge first!
-sudo apt-get purge nginx nginx-common
+sudo apt-get purge nginx nginx-common -y
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
