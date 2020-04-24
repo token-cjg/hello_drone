@@ -9,6 +9,13 @@
 * Stir vigorously
 * Leave mixture to sit for 72 hours
 
+### Quickstart
+
+1. `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/bootstrap.sh`
+1. `chmod +x bootstrap.sh`
+1. `./bootstrap.sh`
+
+
 ### Gotchas
 
 * Make sure that your domain is resolving first, otherwise certbot will complain!
