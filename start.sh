@@ -7,7 +7,7 @@
 # check nginx configuration and restart
 sudo nginx -t
 sudo systemctl restart nginx
-
+sudo systemctl daemon-reload
 # start drone!
 sudo systemctl start drone
 # sudo systemctl status drone
