@@ -13,7 +13,7 @@
 
 1. `curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/bootstrap.sh`
 1. `chmod +x bootstrap.sh`
-1. `./bootstrap.sh`
+1. `./bootstrap.sh $DRONE_GITHUB_CLIENT_ID $DRONE_GITHUB_CLIENT_SECRET`
 
 
 ### Gotchas
