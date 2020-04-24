@@ -31,8 +31,8 @@ sudo systemctl status nginx
 
 # nginx, use our defined default file instead
 sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-available
-curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
-sudo mv sites_enabled.default /etc/nginx/sites-enabled/default
+curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.alt.default
+sudo mv sites_enabled.alt.default /etc/nginx/sites-enabled/default
 
 # nginx, HTTPS /w lets encrypt
 # note, need a domain - get one from freenom
