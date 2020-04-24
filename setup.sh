@@ -3,6 +3,7 @@
 # get drone!
 sudo docker pull drone/drone:1.7.0
 sudo docker pull drone/agent:1.7.0
+sudo rm -rf /etc/drone
 sudo mkdir /etc/drone
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/docker-compose.yml
 sudo mv docker-compose.yml /etc/drone/docker-compose.yml
