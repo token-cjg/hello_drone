@@ -32,7 +32,6 @@ server {
         }
 
         # Certbot Configuration
-        listen [::]:443 ssl ipv6only=on; # managed by Certbot
         listen 443 ssl; # managed by Certbot
         ssl_certificate /etc/letsencrypt/live/groklemins.tk/fullchain.pem; # managed by Certbot
         ssl_certificate_key /etc/letsencrypt/live/groklemins.tk/privkey.pem; # managed by Certbot

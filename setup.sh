@@ -37,6 +37,7 @@ sudo mv drone.service /etc/systemd/system/drone.service
 sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-available
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.default
 sudo mv sites_enabled.default /etc/nginx/sites-enabled
+sudo mv /etc/nginx/sites-enabled/sites_enabled.default /etc/nginx/sites-enabled/default
 
 #sudo sed -i 's/server_name _/server_name groklemins.tk drone.groklemins.tk/' /etc/nginx/sites-enabled/default
 #sudo sed -i 's/try_files $uri $uri\/ =404;/proxy_pass http:\/\/drone;/' /etc/nginx/sites-enabled/default
