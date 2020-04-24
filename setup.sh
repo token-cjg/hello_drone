@@ -11,7 +11,7 @@ DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
 sudo touch /etc/drone/server.env
 sudo bash -c "cat << EOF > /etc/drone/server.env
 # Service settings
-DRONE_SERVER_HOST=drone.groklemins.tk
+DRONE_SERVER_HOST=groklemins.tk
 DRONE_SERVER_PROTO=https
 DRONE_TLS_AUTOCERT=false
 DRONE_RUNNER_CAPACITY=3
