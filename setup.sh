@@ -7,7 +7,7 @@ curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtur
 sudo mv docker-compose.yml /etc/drone/docker-compose.yml
 DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
 sudo touch /etc/drone/server.env
-sudo bash -c 'cat << EOF > /etc/drone/server.env
+sudo bash -c "cat << EOF > /etc/drone/server.env
 # Service settings
 DRONE_RPC_SECRET=$DRONE_SECRET
 DRONE_SERVER_HOST=groklemins.tk
@@ -23,13 +23,13 @@ DRONE_ADMIN=token-cjg
 DRONE_GITHUB_SERVER=https://github.com
 DRONE_GITHUB_CLIENT_ID=Client_ID_from_GitHub
 DRONE_GITHUB_CLIENT_SECRET=Client_Secret_from_GitHub
-EOF'
+EOF"
 sudo touch /etc/drone/agent.env
-sudo bash -c 'cat << EOF > /etc/drone/agent.env
+sudo bash -c "cat << EOF > /etc/drone/agent.env
 DRONE_RPC_SECRET=$DRONE_SECRET
 DRONE_RPC_SERVER=drone-server:8000
 DRONE_RUNNER_CAPACITY=3
-EOF'
+EOF"
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/drone.service
 sudo mv drone.service /etc/systemd/system/drone.service
 
