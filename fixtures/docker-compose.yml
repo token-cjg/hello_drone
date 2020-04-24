@@ -16,12 +16,14 @@ services:
     environment:
       - DRONE_GITHUB_SKIP_VERIFY=true
       - DRONE_AGENTS_ENABLED=true
-      - DRONE_SERVER_HOST=localhost:8000
-      - DRONE_SERVER_PROTO=http
-      - DRONE_TLS_AUTOCERT=false
-      - DRONE_OPEN=false
       - DRONE_HOST=http://localhost:8000
       - DRONE_GITHUB=true
+      - DRONE_SERVER_HOST=groklemins.tk
+      - DRONE_SERVER_PROTO=https
+      - DRONE_TLS_AUTOCERT=false
+      - DRONE_RUNNER_CAPACITY=3
+      - DRONE_OPEN=false
+      - DRONE_ADMIN=token-cjg
 
   drone-agent:
     image: drone/agent
@@ -37,6 +39,7 @@ services:
       - /etc/drone/agent.env
     environment:
       - DRONE_RPC_SERVER=drone-server:8000
+      - DRONE_RUNNER_CAPACITY=3
 
 networks:
   drone:
