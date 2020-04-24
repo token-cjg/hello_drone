@@ -13,6 +13,7 @@ apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 
 # docker-compose
+sudo rm /usr/local/bin/docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
@@ -33,5 +34,5 @@ sudo apt-get install python-certbot-nginx -y
 sed -i 's/server_name _/server_name groklemins.tk drone.groklemins.tk/' /etc/nginx/sites-available/default
 sudo nginx -t
 sudo systemctl reload nginx
-sudo certbot --nginx -d groklemins.tk --no-redirect --register-unsafely-without-email --agree-tos
-sudo certbot renew --dry-run
+sudo certbot --nginx -d groklemins.tk --keep-until-expiring --no-redirect --register-unsafely-without-email --agree-tos
+# sudo certbot renew --dry-run
