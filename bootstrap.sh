@@ -9,5 +9,5 @@ sudo chmod +x ./setup.sh
 sudo chmod +x ./start.sh
 
 bash prereqs.sh
-bash setup.sh
+bash setup.sh $1 $2 # pass DRONE_GITHUB_CLIENT_ID and DRONE_GITHUB_CLIENT_SECRET
 bash start.sh
