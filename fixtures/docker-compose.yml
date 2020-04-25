@@ -8,6 +8,7 @@ services:
       - 9000:443
     networks:
       - drone
+    network_mode: host
     volumes:
       - ./drone-data:/var/lib/drone
       - /var/run/docker.sock:/var/run/docker.sock
@@ -26,6 +27,7 @@ services:
       - drone-server
     networks:
       - drone
+    network_mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
