@@ -8,7 +8,6 @@ services:
       - 9000:443
     networks:
       - drone
-    network_mode: "host"
     volumes:
       - ./drone-data:/var/lib/drone
       - /var/run/docker.sock:/var/run/docker.sock
@@ -18,6 +17,7 @@ services:
     environment:
       - DRONE_SERVER_HOST=groklemins.tk
       - DRONE_SERVER_PROTO=https
+      - DRONE_AGENTS_ENABLED=true
 
   drone-agent:
     image: drone/drone-runner-docker:1.3.0
@@ -27,7 +27,6 @@ services:
       - drone-server
     networks:
       - drone
-    network_mode: "host"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
