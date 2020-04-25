@@ -11,7 +11,6 @@ DRONE_SECRET=$(LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo)
 sudo touch /etc/drone/server.env
 sudo bash -c "cat << EOF > /etc/drone/server.env
 # GitHub Settings
-DRONE_GITHUB_SERVER=https://github.com
 DRONE_RPC_SECRET=$DRONE_SECRET
 DRONE_GITHUB_CLIENT_ID=$1
 DRONE_GITHUB_CLIENT_SECRET=$2
