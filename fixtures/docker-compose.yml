@@ -18,6 +18,9 @@ services:
       - DRONE_SERVER_HOST=groklemins.tk
       - DRONE_SERVER_PROTO=https
       - DRONE_AGENTS_ENABLED=true
+      - DRONE_TLS_AUTOCERT=false
+      - DRONE_OPEN=false
+      - DRONE_HOST=http://localhost:8000
 
   drone-agent:
     image: drone/drone-runner-docker:1.3.0
