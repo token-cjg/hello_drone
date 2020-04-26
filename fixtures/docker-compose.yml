@@ -17,11 +17,6 @@ services:
     environment:
       - DRONE_SERVER_HOST=groklemins.tk
       - DRONE_SERVER_PROTO=https
-      - DRONE_AGENTS_ENABLED=true
-      - DRONE_TLS_AUTOCERT=false
-      - DRONE_OPEN=false
-      - DRONE_HOST=http://localhost:8000
-      - DRONE_DEBUG=true
 
   drone-agent:
     image: drone/drone-runner-docker:1.3.0
@@ -36,9 +31,9 @@ services:
     env_file:
       - /etc/drone/agent.env
     environment:
-      - DRONE_RPC_HOST=drone-server:8000
+      - DRONE_RPC_HOST=drone-server:80
       - DRONE_RPC_PROTO=http
-      - DRONE_DEBUG=true
+      - DRONE_RUNNER_NAME=drone-runner
 
 
 networks:
