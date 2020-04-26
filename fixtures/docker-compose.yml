@@ -41,3 +41,4 @@ services:
 networks:
   drone:
     name: drone_network
+    driver: bridge
