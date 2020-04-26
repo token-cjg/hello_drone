@@ -17,6 +17,7 @@ services:
     environment:
       - DRONE_SERVER_HOST=groklemins.tk
       - DRONE_SERVER_PROTO=https
+      - DRONE_USER_FILTER=token-cjg
 
   drone-agent:
     image: drone/drone-runner-docker:1.3.0
@@ -34,6 +35,7 @@ services:
       - DRONE_RPC_HOST=drone-server:80
       - DRONE_RPC_PROTO=http
       - DRONE_RUNNER_NAME=drone-runner
+      - DRONE_RUNNER_CAPACITY=11
 
 
 networks:
