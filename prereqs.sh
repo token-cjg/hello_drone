@@ -29,6 +29,9 @@ sudo ufw --force enable
 sudo ufw status
 sudo systemctl status nginx
 
+# mongodb (for testing!)
+sudo apt-get install -y mongodb
+
 # nginx, use our defined default file instead
 sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-available
 curl -O -L https://raw.githubusercontent.com/token-cjg/hello_drone/master/fixtures/sites_enabled.alt.default
